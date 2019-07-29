@@ -7,11 +7,11 @@ const app = express();
 
 // Mongoose config
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb+srv://muthacluck:r6g7DA3aZdd9@flustercluck1-1yqpg.mongodb.net/test?retryWrites=true&w=majority';
+let dev_db_url = 'mongodb+srv://muthacluck:r6g7DA3aZdd9@flustercluck1-1yqpg.mongodb.net/mygamelib?retryWrites=true&w=majority';
 let mongoDB = process.env.MONGODB_URL || dev_db_url;
-mongoose.connect(mongoDB);
+mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
-let db = mongoose.connectiondb.on('error', console.error.bind(console, 'MongoDB connection error:'));
+let db = mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
