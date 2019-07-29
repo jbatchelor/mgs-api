@@ -1,0 +1,19 @@
+{
+  "name": "mgs-api",
+  "version": "1.0.0",
+  "description": "API for managing your board game collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbatchelor/mgs-api.git"
+  },
+  "author": "Jason M. Batchelor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbatchelor/mgs-api/issues"
+  },
+  "homepage": "https://github.com/jbatchelor/mgs-api#readme"
+}
