@@ -44,7 +44,6 @@ exports.game_update = function(req, res){
 };
 
 exports.game_remove = function(req, res){
-    console.log(req.params.id);
     Game.findByIdAndRemove(req.params.id, {select:'name'}, function(err, game){
         if(err) {
             return next(err)
