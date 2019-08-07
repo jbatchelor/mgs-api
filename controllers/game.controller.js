@@ -16,12 +16,12 @@ exports.game_create = function(req, res){
         thumbURL: req.body.thumbURL
     });
 
-    game.save(function(err){
+    game.save(function(err, newGame){
         if(err){
             console.log(err);
             return next(err);
         }
-        res.send('Game created successfully');
+        res.send(newGame);
     })
 };
 
@@ -44,7 +44,8 @@ exports.game_update = function(req, res){
 };
 
 exports.game_remove = function(req, res){
-    Game.findOneAndRemove(req.params.id, {select:'name'}, function(err, game){
+    console.log(req.params.id);
+    Game.findByIdAndRemove(req.params.id, {select:'name'}, function(err, game){
         if(err) {
             return next(err)
         };
